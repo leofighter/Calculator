@@ -1,8 +1,10 @@
+
+
 public class Calculator {   //Класс калькулятор, который инкапсулирует логику работы калькулятора 
     private int numberOne;     //приватные поля для хранение чисел и результата
     private int numberTwo;
     private int result;
-}
+
 public Calculator(int numberOne, int numberTwo) { //Конструктор для инициализации чисел
     this.numberOne = numberOne;
     this.numberTwo = numberTwo;
@@ -31,7 +33,7 @@ public int divide(){
     else{
         throw new ArithmeticException("Ошибка: деление на ноль невозможно.");
     }
-    return result;
+    
 }
 
 
@@ -43,4 +45,5 @@ public int getNumberTwo(){
 }
 public int getResult(){
     return result;
+}
 }

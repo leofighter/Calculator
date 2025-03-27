@@ -45,6 +45,7 @@ public class Main {
                 
         }
         scanner.close();
+    }
 
         private static int getValidIntInput(Scanner scanner, String message){  //Метод для получения корректного челого числа
             while (true){
@@ -57,80 +58,9 @@ public class Main {
                     scanner.next();
                 }
             }
-        }
-        
-        /* 
-        int numberOne = 0;
-        if (scanner.hasNextInt()) { // Проверяем, является ли ввод целым числом
-            numberOne = scanner.nextInt(); // Считываем целое число
-            System.out.println("Вы ввели целое число: " + numberOne+ "\n");
-        } else {
-            System.out.println("Ошибка: введите целое число.");
-        }
-        
-
-        System.out.println("Введите второе число:");
-       
-        int numberTwo = 0;
-        if (scanner.hasNextInt()) { // Проверяем, является ли ввод целым числом
-            numberTwo = scanner.nextInt(); // Считываем целое число
-            System.out.println("Вы ввели целое число: " + numberTwo+ "\n");
-        } else {
-            System.out.println("Ошибка: введите целое число.");
-        }
-        
-
-        System.out.println("""
-        Введите номер операции которую хотите выбрать: + \n
-        1.Сложение
-        2.Вычитание
-        3.Умножение
-        4.Деление
-        """);
         
         
-
-        int expUser = 0;
         
-        if (scanner.hasNextInt()) { // Проверяем, является ли ввод целым числом
-            expUser = scanner.nextInt(); // Считываем целое число
-            System.out.println("Вы выбрали " + expUser);
-        } else {
-            System.out.println("Ошибка: введите целое число от 1 до 4.");
-        }
-    
-        scanner.close();
-
-        if (expUser >= 1 && expUser <= 4) {
-        
-        int result = 0;
-        if (expUser == 1){
-            result = numberOne + numberTwo;
-            System.out.print(numberOne +" сложить с " + numberTwo + " получится: "+ result);
-        }
-        else if(expUser == 2){
-            result = numberOne - numberTwo;
-            System.out.print(numberOne +" вычесть " + numberTwo + " получится: "+ result);
-        }
-        else if(expUser == 3){
-            result = numberOne * numberTwo;
-            System.out.print(numberOne +" умножить на " + numberTwo + " получится: "+ result);
-        }
-        else if(expUser == 4){
-            if(numberTwo != 0){
-            result = numberOne / numberTwo;
-            System.out.print(numberOne +" разделить на " + numberTwo + " получится: "+ result);}
-            else {
-                System.out.print("Делить на ноль - нельзя! Перезапустите программу.");
-            }
-
-        }
-    }
-        else {
-            System.out.println("Ошибка: введите число от 1 до 4.");
-        }
-
-    */
         
 
     }
