@@ -1,49 +1,64 @@
 
 
 public class Calculator {   //Класс калькулятор, который инкапсулирует логику работы калькулятора 
-    private int numberOne;     //приватные поля для хранение чисел и результата
-    private int numberTwo;
-    private int result;
-
-public Calculator(int numberOne, int numberTwo) { //Конструктор для инициализации чисел
+    private double numberOne;     //приватные поля для хранение чисел и результата
+    private double numberTwo;
+    private double result;
+//Конструктор для инициализации чисел
+public Calculator(double numberOne, double numberTwo) { 
     this.numberOne = numberOne;
     this.numberTwo = numberTwo;
 }
-
-public int add(){
-    result = numberOne + numberTwo; //метод сложения
+//метод сложения
+public double add(){
+    result = numberOne + numberTwo; 
     return result;
 }
-
-public int subtract(){
-    result = numberOne - numberTwo; //метод вычитания
+//метод вычитания
+public double subtract(){
+    result = numberOne - numberTwo; 
     return result;
 }
-
-public int multiply(){
-    result = numberOne * numberTwo;  //метод умнржения
+//метод умнржения
+public double multiply(){
+    result = numberOne * numberTwo;  
     return result;
 }
-
-public int divide(){
+//метод деления с проверкой деления на 0
+public double divide(){
     
     if(numberTwo != 0){
-        return numberOne / numberTwo; //метод деления с проверкой деления на 0
+        return numberOne / numberTwo; 
     }
     else{
         throw new ArithmeticException("Ошибка: деление на ноль невозможно.");
     }
     
 }
+//метод возведения в степень
+public double power(){
+    result = Math.pow(numberOne, numberTwo);  
+    return result;
+    
+}
+//метод вычисляет корень n-й степени из числа
+public double degreeRoot(){
+    if(numberTwo == 0){
+        throw new ArithmeticException("Степень корня не может быть нулём");  
+    }
+    if(numberOne < 0 && numberTwo %2 == 0){
+        throw new ArithmeticException("Чётный корень из отрицательного числа не существует");
+    }
+    return result = Math.pow(numberOne, 1.0 / numberTwo);
+}
 
-
-public int getNumberOne(){
+public double getNumberOne(){
     return numberOne;
 }
-public int getNumberTwo(){
+public double getNumberTwo(){
     return numberTwo;
 }
-public int getResult(){
+public double getResult(){
     return result;
 }
 }

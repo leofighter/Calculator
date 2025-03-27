@@ -5,23 +5,25 @@ public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        int numberOne = getValidIntInput(scanner, "Введите первое число.");
+        double numberOne = getValidDoubleInput(scanner, "Введите первое число.");
 
-        int numberTwo = getValidIntInput(scanner, "Введите второе число.");
+        double numberTwo = getValidDoubleInput(scanner, "Введите второе число.");
 
         Calculator calculator = new Calculator(numberOne, numberTwo);
 
         System.out.println("""
         Введите номер операции которую хотите выбрать: 
-        1.Сложение
-        2.Вычитание
-        3.Умножение
-        4.Деление
+        1.Сложение.
+        2.Вычитание.
+        3.Умножение.
+        4.Деление.
+        5.Возведение в степень.
+        6.Корень в степени(1-ое - число, 2-ое степень корня)
         """);
 
-        int operation = getValidIntInput(scanner, "Введите номер операции (1-4)");
+        int operation = getValidIntInput(scanner, "Введите номер операции (1-6)");
 
-        switch (operation) {
+         switch (operation) {
                 case 1 : System.out.println(numberOne +" + "+ numberTwo+ " = "+ calculator.add());
                 break;
 
@@ -40,14 +42,23 @@ public class Main {
                 }
                 break;
 
+                case 5 : System.out.println(numberOne +" в степени "+ numberTwo+ " = "+ calculator.power());
+                break;
+
+                case 6 : System.out.printf("%.0f\u221A%.0f = %.4f", 
+                numberTwo,    // степень корня
+                numberOne,    // подкоренное выражение
+                calculator.degreeRoot());
+                break;
+
                 default:
-                System.out.println("Ошибка! Введите число от 1 до 4.");
+                System.out.println("Ошибка! Введите число от 1 до 6.");
                 
         }
         scanner.close();
     }
-
-        private static int getValidIntInput(Scanner scanner, String message){  //Метод для получения корректного челого числа
+        //Метод для получения целого числа
+        private static int getValidIntInput(Scanner scanner, String message){  
             while (true){
                 System.out.println(message);
                 try {
@@ -58,7 +69,24 @@ public class Main {
                     scanner.next();
                 }
             }
-        
+
+                
+            }
+            //Метод для получения числа типа double
+            private static double getValidDoubleInput(Scanner scanner, String message){  
+                while (true){
+                    System.out.println(message);
+                    try {
+                        return scanner.nextDouble(); //считываем число double
+                    }
+                    catch(InputMismatchException e){
+                        System.out.println("Ошибка! Введите число");
+                        scanner.next();
+                    }
+    
+                    
+                }
+            
         
         
         
