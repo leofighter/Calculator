@@ -22,7 +22,6 @@ public class Main {
         """);
 
         int operation = getValidIntInput(scanner, "Введите номер операции (1-6)");
-
          switch (operation) {
                 case 1 : System.out.println(numberOne +" + "+ numberTwo+ " = "+ calculator.add());
                 break;
@@ -34,29 +33,29 @@ public class Main {
                 break;
 
                 case 4 :
-                try {
-                    System.out.println(numberOne +" / "+ numberTwo+ " = "+ calculator.divide());
-                }
-                catch (ArithmeticException e) {
-                System.err.println(e.getMessage());
-                }
+                    try {
+                        System.out.println(numberOne +" / "+ numberTwo+ " = "+ calculator.divide());
+                    }
+                    catch (ArithmeticException e) {
+                    System.err.println(e.getMessage());
+                    }
                 break;
 
                 case 5 : System.out.println(numberOne +" в степени "+ numberTwo+ " = "+ calculator.power());
                 break;
 
-                case 6 : System.out.printf("%.0f\u221A%.0f = %.4f", 
-                numberTwo,    // степень корня
-                numberOne,    // подкоренное выражение
-                calculator.degreeRoot());
+                case 6 : System.out.printf("%.0f\u221A%.0f = %.4f\n", 
+                    numberTwo,    // степень корня
+                    numberOne,    // подкоренное выражение
+                    calculator.degreeRoot());
                 break;
 
                 default:
-                System.out.println("Ошибка! Введите число от 1 до 6.");
-                
-        }
+                System.out.println("Ошибка! Введите число от 1 до 6.");     
+            }
         scanner.close();
-    }
+        }
+        
         //Метод для получения целого числа
         private static int getValidIntInput(Scanner scanner, String message){  
             while (true){
@@ -68,10 +67,8 @@ public class Main {
                     System.out.println("Ошибка! Введите целое число");
                     scanner.next();
                 }
-            }
-
-                
-            }
+            }     
+        }
             //Метод для получения числа типа double
             private static double getValidDoubleInput(Scanner scanner, String message){  
                 while (true){
@@ -82,14 +79,7 @@ public class Main {
                     catch(InputMismatchException e){
                         System.out.println("Ошибка! Введите число");
                         scanner.next();
-                    }
-    
-                    
-                }
-            
-        
-        
-        
-
-    }
-}
+                    }   
+                }  
+            }
+        }
